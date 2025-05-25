@@ -2,7 +2,13 @@ import socket
 import threading
 import tkinter as tk
 from tkinter import scrolledtext, simpledialog
-from encryption import encrypt_message, decrypt_message, key, cipher
+
+# Temporary dummy encryption/decryption functions for testing
+def encrypt_message(msg):
+    return msg.encode()
+
+def decrypt_message(msg):
+    return msg.decode()
 
 HOST = '127.0.0.1'
 PORT = 65432
@@ -42,7 +48,7 @@ class ChatClient:
                 self.chat_area.insert(tk.END, decrypted + "\n")
                 self.chat_area.yview(tk.END)
                 self.chat_area.config(state='disabled')
-            except:
+            except OSError:
                 break
 
     def send_message(self, event=None):
