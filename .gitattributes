@@ -1,2 +1,23 @@
-# Auto detect text files and perform LF normalization
+# Ensure consistent line endings
 * text=auto
+
+# Treat Python files as UTF-8
+*.py text eol=lf
+
+# Mark text files to ensure proper diffing
+*.md text
+*.txt text
+*.py text
+
+# Exclude screenshots and binaries from diff
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp4 binary
+
+# Handle encryption key as binary if you store one
+*.key binary
+*.pem binary
+
+# Normalize shell scripts
+*.sh text eol=lf
